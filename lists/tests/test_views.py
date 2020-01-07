@@ -63,6 +63,7 @@ class NewListTest(TestCase):
         response = self.client.post('/lists/new', data={'text': ''})
         self.assertIsInstance(response.context['form'], ItemForm)
 
+
 class ListViewTest(TestCase):
 
     def test_uses_list_template(self):
