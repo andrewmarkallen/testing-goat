@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.core.exceptions import ValidationError
 from django.shortcuts import redirect, render
-from lists.models import Item, List
+from lists.models import List
 from lists.forms import ItemForm
 
 # Create your views here.
