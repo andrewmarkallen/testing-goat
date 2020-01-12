@@ -10,7 +10,7 @@ def reset_database(host):
     with settings(host_string=f'goat@{host}'):
         run(f'{manage_dot_py} flush --noinput')
 
-def create_session_on_server(host):
+def create_session_on_server(host, email):
     manage_dot_py = _get_manage_dot_py(host)
     with settings(host_string=f'goat@{host}'):
         session_key = run(f'{manage_dot_py} create_session {email}')
