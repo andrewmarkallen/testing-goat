@@ -69,6 +69,7 @@ class LoginTest(FunctionalTest):
         email_id = None
         start = time.time()
         inbox = poplib.POP3_SSL('pop.mail.yahoo.com')
+        time.sleep(10)
         try:
             inbox.user(test_email)
             inbox.pass_(os.environ['YAHOO_PASSWORD'])
