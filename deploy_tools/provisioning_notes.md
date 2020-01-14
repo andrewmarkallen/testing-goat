@@ -21,6 +21,7 @@ eg, on Ubuntu:
 ## Systemd service
 
 * see gunicorn-systemd.template.Service
+* replace SEKRIT with email password
 * replace SITENAME with, e.g., staging.my-domain.com
 
 ## Folder structure:
