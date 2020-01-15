@@ -7,7 +7,7 @@ from .server_tools import reset_database
 import os
 import time
 
-MAX_WAIT = 8
+MAX_WAIT = 25
 
 
 class FunctionalTest(StaticLiveServerTestCase):

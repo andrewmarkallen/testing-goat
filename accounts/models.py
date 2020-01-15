@@ -10,7 +10,7 @@ class User(models.Model):
     REQUIRED_FIELDS = []
     USERNAME_FIELD = 'email'
     is_anonymous = False
-    is_authenticated = False
+    is_authenticated = True
 
 
 class Token(models.Model):
