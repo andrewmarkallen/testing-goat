@@ -3,3 +3,4 @@ geckodriver.log
 django.log
 __pycache__
 *.pyc
+functional_tests/screendumps
