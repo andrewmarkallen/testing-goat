@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth import get_user_model
 from django.shortcuts import redirect, render
 from lists.models import List
@@ -49,3 +50,15 @@ def new_list(request):
 def my_lists(request, email):
     owner = User.objects.get(email=email)
     return render(request, 'my_lists.html', {'owner': owner})
+
+
+def share_list(request, list_id):
+    list_ = List.objects.get(id=list_id)
+    email = request.POST['sharee']
+    try:
+        user = User.objects.get(email=email)
+    except ObjectDoesNotExist:
+        user = User.objects.create(email=email)
+    list_.shared_with.add(user)
+    return redirect(list_)
+    # return render(request, 'list.html', {'list': list_})
