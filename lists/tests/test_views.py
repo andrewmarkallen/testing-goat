@@ -239,7 +239,7 @@ class ShareListTest(TestCase):
             f'/lists/{list_.id}/share',
             data={'sharee': 'moo@example.com'}
         )
-        self.assertTemplateUsed(response, 'list.html')
+        self.assertRedirects(response, f'/lists/{list_.id}/')
 
     def test_post_adds_user_to_lists_shared_with_(self):
         user = User.objects.create(email='sharee@example.com')
