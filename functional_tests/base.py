@@ -17,7 +17,7 @@ SCREEN_DUMP_LOCATION = os.path.join(
     os.path.dirname(os.path.abspath(__file__)), 'screendumps'
 )
 
-MAX_WAIT = 16
+MAX_WAIT = 45
 
 
 def wait(fn):
